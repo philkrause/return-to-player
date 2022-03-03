@@ -23,7 +23,6 @@ for (let index = 0; index < totalSpins; index++) {
    totalBet++
 
    rngOne = Math.floor(Math.random() * (reelLength))
-   console.log(rngOne)
    rngTwo = Math.floor(Math.random() * (reelLength))
    
    reelOneOutcome = reelOne[rngOne]
