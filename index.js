@@ -4,10 +4,10 @@ const reelOne = [1,1,1,2]
 const reelTwo = [1,1,1,2]
 
 //Payouts 
-const smallPayout = 1.5
-const bigPayout = 3
+const jackPayouts = 1.5
+const queenPayouts = 3
 
-const totalSpins = 5000000
+const totalSpins = 500
 const reelLength = reelOne.length
 let jackWins = 0
 let queenWins = 0
@@ -29,12 +29,12 @@ for (let index = 0; index < totalSpins; index++) {
    reelTwoOutcome = reelTwo[rngTwo]
 
    if(reelOneOutcome === 1 && reelTwoOutcome === 1){
-      totalWin+=1.5
+      totalWin+=jackPayouts
       console.log(`!! Win 1.5$ !!`)
       jackWins++
    }
    if(reelOneOutcome === 2 && reelTwoOutcome === 2){
-      totalWin+=3
+      totalWin+=queenPayouts
       console.log(`!! Win 3$ !!`)
       queenWins++
    }
