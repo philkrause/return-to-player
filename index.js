@@ -30,17 +30,17 @@ for (let index = 0; index < totalSpins; index++) {
 
    if(reelOneOutcome === 1 && reelTwoOutcome === 1){
       totalWin+=jackPayouts
-      console.log(`!! Win 1.5$ !!`)
       jackWins++
+      console.log(`!! Win 1.5$ !!`)
    }
    if(reelOneOutcome === 2 && reelTwoOutcome === 2){
       totalWin+=queenPayouts
-      console.log(`!! Win 3$ !!`)
       queenWins++
+      console.log(`!! Win 3$ !!`)
    }
    else {
-      console.log("LOSE")
       losses++
+      console.log("LOSE")
    }
 }
 
