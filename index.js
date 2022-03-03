@@ -31,12 +31,12 @@ for (let index = 0; index < totalSpins; index++) {
 
    if(reelOneOutcome === 1 && reelTwoOutcome === 1){
       totalWin+=1.5
-      console.log(`Win 1.5$ !!!`)
+      console.log(`!! Win 1.5$ !!`)
       jackWins++
    }
    if(reelOneOutcome === 2 && reelTwoOutcome === 2){
       totalWin+=3
-      console.log(`Win 3$ !!!`)
+      console.log(`!! Win 3$ !!`)
       queenWins++
    }
    else {
