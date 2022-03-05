@@ -17,7 +17,7 @@ const axePayout = 1.50
 const macePayout = 1.75
 const swordPayout = 2
 
-const totalSpins = 100000
+const totalSpins = 100
 const reelLength = reelOne.length
 
 let jackWins = 0
@@ -37,66 +37,78 @@ let totalBet = 0
 let totalCashWon = 0
 let returnToPlayer
 
-for (let index = 0; index < totalSpins; index++) {
 
+for (let index = 0; index < totalSpins; index++) {
 
    totalBet++
 
-   rngOne = Math.floor(Math.random() * (reelLength))
-   rngTwo = Math.floor(Math.random() * (reelLength))
-   rngThree = Math.floor(Math.random() * (reelLength))
-
-   reelOneOutcome = reelOne[rngOne]
-   reelTwoOutcome = reelTwo[rngTwo]
-   reelThrOutcome = reelThr[rngTwo]
+   rngOne = Math.floor(Math.random() * (reelLength - 2))
+   rngTwo = Math.floor(Math.random() * (reelLength - 2))
+   rngThree = Math.floor(Math.random() * (reelLength - 2))
 
 
-   if (reelOneOutcome === 1 && reelTwoOutcome === 1 && reelThrOutcome === 1) {
-      totalCashWon += jackPayout
-      jackWins++
-      console.log(`!! Player Win .30$ !!`)
-   }
+   let cellOne = reelOne[rngOne + 2]
+   let cellTwo = reelTwo[rngOne + 2]
+   let cellThree = reelThr[rngOne + 2]
+   let cellFour = reelOne[rngTwo + 1]
+   let cellFive = reelTwo[rngTwo + 1]
+   let cellSix = reelThr[rngTwo + 1]
+   let cellSeven = reelOne[rngThree]
+   let cellEight = reelTwo[rngThree]
+   let cellNine = reelThr[rngThree]
+   
 
-   if (reelOneOutcome === 2 && reelTwoOutcome === 2 && reelThrOutcome === 2) {
-      totalCashWon += queenPayout
-      queenWins++
-      console.log(`!! Player Win .45$ !!`)
-   }
-   if (reelOneOutcome === 3 && reelTwoOutcome === 3 && reelThrOutcome === 3) {
-      totalCashWon += kingPayout
-      kingWins++
-      console.log(`!! Player Win .55$ !!`)
-   }
+   const Outcome = [cellOne, cellTwo, cellThree, cellFour, cellFive, cellSix, cellSeven, cellEight, cellNine]
 
-   if (reelOneOutcome === 4 && reelTwoOutcome === 4 && reelThrOutcome === 4) {
-      totalCashWon += acePayout
-      aceWins++
-      console.log(`!! Player Win 1$ !!`)
-   }
-   if (reelOneOutcome === 5 && reelTwoOutcome === 5 && reelThrOutcome === 5) {
-      totalCashWon += shieldPayout
-      shieldWins++
-      console.log(`!! Player Win 1.25$ !!`)
-   }
-   if (reelOneOutcome === 6 && reelTwoOutcome === 6 && reelThrOutcome === 6) {
-      totalCashWon += axePayout
-      axeWins++
-      console.log(`!! Player Win 1.50$ !!`)
-   }
-   if (reelOneOutcome === 7 && reelTwoOutcome === 7 && reelThrOutcome === 7) {
-      totalCashWon += macePayout
-      maceWins++
-      console.log(`!! Player Win 1.50$ !!`)
-   }
-   if (reelOneOutcome === 8 && reelTwoOutcome === 8 && reelThrOutcome === 8) {
-      totalCashWon += swordPayout
-      swordWins++
-      console.log(`!! BIG Win 2$ !!`)
-   }
-   else {
-      losses++
-      console.log("HOUSE WINS")
-   }
+   console.log(Outcome)
+
+
+   // if (reelOneOutcome === 1 && reelTwoOutcome === 1 && reelThrOutcome === 1) {
+   //    totalCashWon += jackPayout
+   //    jackWins++
+   //   // console.log(`!! Player Win .30$ !!`)
+   // }
+
+   // if (reelOneOutcome === 2 && reelTwoOutcome === 2 && reelThrOutcome === 2) {
+   //    totalCashWon += queenPayout
+   //    queenWins++
+   //    //console.log(`!! Player Win .45$ !!`)
+   // }
+   // if (reelOneOutcome === 3 && reelTwoOutcome === 3 && reelThrOutcome === 3) {
+   //    totalCashWon += kingPayout
+   //    kingWins++
+   //    //console.log(`!! Player Win .55$ !!`)
+   // }
+
+   // if (reelOneOutcome === 4 && reelTwoOutcome === 4 && reelThrOutcome === 4) {
+   //    totalCashWon += acePayout
+   //    aceWins++
+   //    //console.log(`!! Player Win 1$ !!`)
+   // }
+   // if (reelOneOutcome === 5 && reelTwoOutcome === 5 && reelThrOutcome === 5) {
+   //    totalCashWon += shieldPayout
+   //    shieldWins++
+   //    //console.log(`!! Player Win 1.25$ !!`)
+   // }
+   // if (reelOneOutcome === 6 && reelTwoOutcome === 6 && reelThrOutcome === 6) {
+   //    totalCashWon += axePayout
+   //    axeWins++
+   //    //console.log(`!! Player Win 1.50$ !!`)
+   // }
+   // if (reelOneOutcome === 7 && reelTwoOutcome === 7 && reelThrOutcome === 7) {
+   //    totalCashWon += macePayout
+   //    maceWins++
+   //    //console.log(`!! Player Win 1.50$ !!`)
+   // }
+   // if (reelOneOutcome === 8 && reelTwoOutcome === 8 && reelThrOutcome === 8) {
+   //    totalCashWon += swordPayout
+   //    swordWins++
+   //    //console.log(`!! BIG Win 2$ !!`)
+   // }
+   // else {
+   //    losses++
+   //    //console.log("HOUSE WINS")
+   // }
 
 }
 
@@ -108,19 +120,19 @@ let stake = totalCashWon - totalBet
 let allWins = jackWins + queenWins + aceWins + shieldWins + axeWins + maceWins + swordWins
 let winRatio = allWins/losses
 
-console.log(`Reel Length: ${reelLength}`)
-console.log(`TotalWin: ${allWins}`)
-console.log(`Total Losses: ${losses}`)
-console.log(`Win Ration: ${winRatio}`)
-console.log(`TotalBet: ${totalBet}`)
-console.log(`Stake: ${stake}`)
-console.log(`JackWins: ${jackWins}`)
-console.log(`QueenWins: ${queenWins}`)
-console.log(`KingWins: ${kingWins}`)
-console.log(`AceWins: ${aceWins}`)
-console.log(`ShieldWins: ${shieldWins}`)
-console.log(`AxeWins: ${axeWins}`)
-console.log(`MaceWins: ${maceWins}`)
-console.log(`SwordWins: ${swordWins}`)
-console.log(`Return to Player: ${returnToPlayer}`)
+// console.log(`Reel Length: ${reelLength}`)
+// console.log(`TotalWin: ${allWins}`)
+// console.log(`Total Losses: ${losses}`)
+// console.log(`Win Ration: ${winRatio}`)
+// console.log(`TotalBet: ${totalBet}`)
+// console.log(`Stake: ${stake}`)
+// console.log(`JackWins: ${jackWins}`)
+// console.log(`QueenWins: ${queenWins}`)
+// console.log(`KingWins: ${kingWins}`)
+// console.log(`AceWins: ${aceWins}`)
+// console.log(`ShieldWins: ${shieldWins}`)
+// console.log(`AxeWins: ${axeWins}`)
+// console.log(`MaceWins: ${maceWins}`)
+// console.log(`SwordWins: ${swordWins}`)
+// console.log(`Return to Player: ${returnToPlayer}`)
 
