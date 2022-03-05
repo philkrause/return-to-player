@@ -2,22 +2,26 @@
 //4inarow
 
 //Reel Distribution
-//1Jack , 2Queen, 3King, 4Ace, 5Shield, 6Axe, 7Mace, 8Sword
-const reelOne = [1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 7, 8, 8]
-const reelTwo = [1, 2, 2, 2, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 7, 7, 8]
-const reelThr = [1, 1, 1, 3, 3, 3, 3, 3, 4, 4, 5, 5, 5, 5, 6, 6, 6, 7, 8, 8]
+//1Jack , 2Queen, 3King, 4Ace, 5Heart, 6Club, 7Diamond, 8Spade
+const reelOne =   [1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 7, 8, 8, 8, 8]
+const reelTwo =   [1, 2, 2, 2, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 7, 8, 8, 8, 8]
+const reelThree = [1, 1, 1, 3, 3, 3, 3, 3, 4, 4, 5, 5, 5, 5, 6, 6, 6, 7, 8, 8, 8, 8]
+const reelFour =  [1, 1, 1, 3, 3, 3, 3, 3, 4, 4, 5, 5, 5, 5, 6, 6, 6, 7, 8, 8, 8, 8]
+const reelFive =  [1, 1, 1, 3, 3, 3, 3, 3, 4, 4, 5, 5, 5, 5, 6, 6, 6, 7, 8, 8, 8, 8]
+
+
 
 //Payouts 
 const jackPayout = .35
 const queenPayout = .45
 const kingPayout = .55
 const acePayout = 1
-const shieldPayout = 1.25
-const axePayout = 1.50
-const macePayout = 1.75
-const swordPayout = 2
+const heartPayout = 1.25
+const clubPayout = 1.50
+const diamondPayout = 1.75
+const spadePayout = 2
 
-const payOutArray = [jackPayout, queenPayout, kingPayout, acePayout, shieldPayout, axePayout, macePayout, swordPayout]
+const payOutArray = [jackPayout, queenPayout, kingPayout, acePayout, heartPayout, clubPayout, diamondPayout, spadePayout]
 
 const totalSpins = 100
 const reelLength = reelOne.length
@@ -26,10 +30,10 @@ let jackWins = 0
 let queenWins = 0
 let kingWins = 0
 let aceWins = 0
-let shieldWins = 0
-let axeWins = 0
-let maceWins = 0
-let swordWins = 0
+let heartWins = 0
+let clubWins = 0
+let diamondWins = 0
+let spadeWins = 0
 
 
 let losses = 0
@@ -70,13 +74,13 @@ for (let index = 0; index < totalSpins; index++) {
 
    let cellOne = reelOne[topRow1]
    let cellTwo = reelTwo[topRow2]
-   let cellThree = reelThr[topRow3]
+   let cellThree = reelThree[topRow3]
    let cellFour = reelOne[midRow1]
    let cellFive = reelTwo[midRow2]
-   let cellSix = reelThr[midRow3]
+   let cellSix = reelThree[midRow3]
    let cellSeven = reelOne[botRow1]
    let cellEight = reelTwo[botRow2]
-   let cellNine = reelThr[botRow3]
+   let cellNine = reelThree[botRow3]
 
 
    const Outcome = [cellOne, cellTwo, cellThree, cellFour, cellFive, cellSix, cellSeven, cellEight, cellNine]
@@ -115,7 +119,7 @@ console.log(`Total Cash Won: ${totalCashWon}`)
 
 
 // let stake = totalCashWon - totalBet
-// let allWins = jackWins + queenWins + aceWins + shieldWins + axeWins + maceWins + swordWins
+// let allWins = jackWins + queenWins + aceWins + heartWins + clubWins + diamondWins + spadeWins
 // let winRatio = allWins/losses
 
 // console.log(`Reel Length: ${reelLength}`)
@@ -128,9 +132,9 @@ console.log(`Total Cash Won: ${totalCashWon}`)
 // console.log(`QueenWins: ${queenWins}`)
 // console.log(`KingWins: ${kingWins}`)
 // console.log(`AceWins: ${aceWins}`)
-// console.log(`ShieldWins: ${shieldWins}`)
-// console.log(`AxeWins: ${axeWins}`)
-// console.log(`MaceWins: ${maceWins}`)
-// console.log(`SwordWins: ${swordWins}`)
+// console.log(`heartWins: ${shieldWins}`)
+// console.log(`clubWins: ${clubWins}`)
+// console.log(`diamondWins: ${maceWins}`)
+// console.log(`spadeWins: ${swordWins}`)
 // console.log(`Return to Player: ${returnToPlayer}`)
 
