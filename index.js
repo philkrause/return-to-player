@@ -83,9 +83,6 @@ for (let index = 0; index < totalSpins; index++) {
    const lineAcrossOne = [cellOne, cellTwo, cellThree]
    const lineAcrossTwo = [cellFour, cellFive, cellSix]
    const lineAcrossThree = [cellSeven, cellEight, cellNine]
-   const lineDownOne = [cellOne, cellFour, cellSeven]
-   const lineDownTwo = [cellTwo, cellFive, cellEight]
-   const lineDownThree = [cellThree, cellSix, cellNine]
    const lineDiagnalTopDown = [cellOne, cellFive, cellNine]
    const lineDiagnalDownTop = [cellSeven, cellFive, cellThree]
 
@@ -97,17 +94,7 @@ for (let index = 0; index < totalSpins; index++) {
       payOutLine(lineAcrossTwo[0])
    }
    if(lineAcrossThree[0] == lineAcrossThree[1] && lineAcrossThree[1] == lineAcrossThree[2]){
-      payOutLine(lineThree[0])
-   }
-   //Down Wins
-   if(lineAcrossOne[0] == lineAcrossOne[1] && lineAcrossOne[1] == lineAcrossOne[2]){
-      payOutLine(lineAcrossOne[0])
-   }
-   if(lineAcrossTwo[0] == lineAcrossTwo[1] && lineAcrossTwo[1] == lineAcrossTwo[2]){
-      payOutLine(lineAcrossTwo[0])
-   }
-   if(lineAcrossThree[0] == lineAcrossThree[1] && lineAcrossThree[1] == lineAcrossThree[2]){
-      payOutLine(lineThree[0])
+      payOutLine(lineAcrossThree[0])
    }
 
    //Diagnal Wins 
