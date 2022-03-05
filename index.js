@@ -3,9 +3,9 @@
 
 //Reel Distribution
 //1Jack , 2Queen, 3King, 4Ace, 5Shield, 6Axe, 7Mace, 8Sword
-const reelOne = [1, 1, 1, 1, 1, 2, 3, 3, 4, 4, 4, 5, 6, 6, 7, 7, 8]
-const reelTwo = [1, 1, 1, 1, 1, 2, 3, 3, 4, 4, 4, 5, 6, 6, 7, 7, 8]
-const reelThr = [1, 1, 1, 1, 1, 2, 3, 3, 4, 4, 4, 5, 6, 6, 7, 7, 8]
+const reelOne = [1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 7, 7, 8]
+const reelTwo = [1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 7, 7, 8]
+const reelThr = [1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 7, 7, 8]
 
 //Payouts 
 const jackPayout = .35
