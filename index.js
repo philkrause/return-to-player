@@ -3,9 +3,9 @@
 
 //Reel Distribution
 //1Jack , 2Queen, 3King, 4Ace, 5Shield, 6Axe, 7Mace, 8Sword
-const reelOne = [1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 7, 7, 8]
-const reelTwo = [1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 7, 7, 8]
-const reelThr = [1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 7, 7, 8]
+const reelOne = [1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 7, 8, 8]
+const reelTwo = [1, 2, 2, 2, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 7, 7, 8]
+const reelThr = [1, 1, 1, 3, 3, 3, 3, 3, 4, 4, 5, 5, 5, 5, 6, 6, 6, 7, 8, 8]
 
 //Payouts 
 const jackPayout = .35
@@ -43,7 +43,7 @@ let returnToPlayer
 const payOutLine = (line) => {
    for (let index = 0; index < payOutArray.length; index++) {
       const payout = payOutArray[index];
-      if(line[0] == index) {
+      if(line == index) {
          console.log(`Payout: ${payout}`)
          totalCashWon = totalCashWon + payout
       }
@@ -80,26 +80,45 @@ for (let index = 0; index < totalSpins; index++) {
 
 
    const Outcome = [cellOne, cellTwo, cellThree, cellFour, cellFive, cellSix, cellSeven, cellEight, cellNine]
-   const lineOne = [cellOne, cellTwo, cellThree]
-   const lineTwo = [cellFour, cellFive, cellSix]
-   const lineThree = [cellSeven, cellEight, cellNine]
-   const lineFour = [cellOne, cellFive, cellNine]
-   const lineFive = [cellSeven, cellFive, cellThree]
+   const lineAcrossOne = [cellOne, cellTwo, cellThree]
+   const lineAcrossTwo = [cellFour, cellFive, cellSix]
+   const lineAcrossThree = [cellSeven, cellEight, cellNine]
+   const lineDownOne = [cellOne, cellFour, cellSeven]
+   const lineDownTwo = [cellTwo, cellFive, cellEight]
+   const lineDownThree = [cellThree, cellSix, cellNine]
+   const lineDiagnalTopDown = [cellOne, cellFive, cellNine]
+   const lineDiagnalDownTop = [cellSeven, cellFive, cellThree]
+
+   //Across Wins
+   if(lineAcrossOne[0] == lineAcrossOne[1] && lineAcrossOne[1] == lineAcrossOne[2]){
+      payOutLine(lineAcrossOne[0])
+   }
+   if(lineAcrossTwo[0] == lineAcrossTwo[1] && lineAcrossTwo[1] == lineAcrossTwo[2]){
+      payOutLine(lineAcrossTwo[0])
+   }
+   if(lineAcrossThree[0] == lineAcrossThree[1] && lineAcrossThree[1] == lineAcrossThree[2]){
+      payOutLine(lineThree[0])
+   }
+   //Down Wins
+   if(lineAcrossOne[0] == lineAcrossOne[1] && lineAcrossOne[1] == lineAcrossOne[2]){
+      payOutLine(lineAcrossOne[0])
+   }
+   if(lineAcrossTwo[0] == lineAcrossTwo[1] && lineAcrossTwo[1] == lineAcrossTwo[2]){
+      payOutLine(lineAcrossTwo[0])
+   }
+   if(lineAcrossThree[0] == lineAcrossThree[1] && lineAcrossThree[1] == lineAcrossThree[2]){
+      payOutLine(lineThree[0])
+   }
+
+   //Diagnal Wins 
+   if(lineDiagnalDownTop[0] == lineDiagnalTopDown[1] && lineDiagnalTopDown[1] == lineDiagnalDownTop[2]){
+      payOutLine(lineDiagnalDownTop[0])
+   }
+
+   if(lineDiagnalTopDown[0] == lineDiagnalDownTop[1] && lineDiagnalDownTop[1] == lineDiagnalDownTop[2]){
+      payOutLine(lineDiagnalTopDown[0])
+   }
    
-   // console.log(`LineOne: ${lineOne}`)
-   // console.log(`LineTwo: ${lineTwo}`)
-   // console.log(`LineThree: ${lineThree}`)
-
-
-   if(lineOne[0] == lineOne[1] && lineOne[1] == lineOne[2]){
-      payOutLine(lineOne)
-   }
-   if(lineTwo[0] == lineTwo[1] && lineTwo[1] == lineTwo[2]){
-      payOutLine(lineTwo)
-   }
-   if(lineThree[0] == lineThree[1] && lineThree[1] == lineThree[2]){
-      payOutLine(lineThree)
-   }
 }
 
 //returnToPlayer = (totalCashWon / totalBet) * 100
